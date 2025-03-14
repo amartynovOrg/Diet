@@ -1,13 +1,13 @@
-package org.ivanov.andrey.diet;
+package org.ivanov.andrey.diet.demain.calories;
 
 import java.math.BigDecimal;
 
 public enum Activity {
-    MINIMAL(BigDecimal.valueOf(1.2)),
-    WEAK(BigDecimal.valueOf(1.375)),
-    MEDIUM(BigDecimal.valueOf(1.55)),
-    HIGH(BigDecimal.valueOf(1.725)),
-    EXTREME(BigDecimal.valueOf(1.9));
+    MINIMAL(new BigDecimal("1.2")),
+    WEAK(new BigDecimal("1.375")),
+    MEDIUM(new BigDecimal("1.55")),
+    HIGH(new BigDecimal("1.725")),
+    EXTREME(new BigDecimal("1.9"));
 
     private final BigDecimal factor;
 
