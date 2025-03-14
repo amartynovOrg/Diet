@@ -1,33 +1,31 @@
 package org.ivanov.andrey.diet;
 
-i
+import org.ivanov.andrey.diet.demain.calories.CalorieCalculator;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CalorieCalculatorTest {
+import static org.ivanov.andrey.diet.demain.calories.Activity.EXTREME;
+import static org.ivanov.andrey.diet.demain.calories.Activity.MINIMAL;
+import static org.ivanov.andrey.diet.demain.calories.Sex.FEMALE;
+import static org.ivanov.andrey.diet.demain.calories.Sex.MALE;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+class CalorieCalculatorTest {
+
+    private final CalorieCalculator calculator = new CalorieCalculator();
 
     @Test
-    void testCalculateCaloriesForMan() {
-        BigDecimal weight = new BigDecimal("70");
-        Integer height = 175;
-        Integer age = 25;
-        Activity activity = Activity.MEDIUM;
-        Sex sex = Sex.M;
-
-        String result = String.valueOf(CalorieCalculator.calculateCalories(weight, height, age, sex, activity));
-        assertEquals("2706.25", result);
+    void testCalculateCaloriesForMaleSedentary() {
+        BigDecimal calories = calculator.calculateCalories(new BigDecimal("70"), 175, 30, MALE, MINIMAL);
+        assertNotNull(calories);
+        assertEquals(new BigDecimal("1978"), calories);
     }
 
     @Test
-    void testCalculateCaloriesForWoman() {
-        BigDecimal weight = new BigDecimal("47");
-        Integer height = 156;
-        Integer age = 28;
-        Activity activity = Activity.MINIMAL;
-        Sex sex = Sex.F;
-
-        String result = String.valueOf(CalorieCalculator.calculateCalories(weight, height, age, sex, activity));
-        assertEquals("1372", result);
+    void testCalculateCaloriesForFemaleActive() {
+        BigDecimal calories = calculator.calculateCalories(new BigDecimal("50"), 165, 25, FEMALE, EXTREME);
+        assertNotNull(calories);
+        assertEquals(new BigDecimal("2365"), calories);
     }
 }
