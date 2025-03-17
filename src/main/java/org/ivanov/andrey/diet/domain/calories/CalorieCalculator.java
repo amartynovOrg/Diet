@@ -1,4 +1,4 @@
-package org.ivanov.andrey.diet.demain.calories;
+package org.ivanov.andrey.diet.domain.calories;
 
 import org.springframework.stereotype.Component;
 
