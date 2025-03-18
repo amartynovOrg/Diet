@@ -1,13 +1,12 @@
-package org.ivanov.andrey.diet;
+package org.ivanov.andrey.diet.domain.calories;
 
-import org.ivanov.andrey.diet.demain.calories.CalorieCalculator;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
-import static org.ivanov.andrey.diet.demain.calories.Activity.EXTREME;
-import static org.ivanov.andrey.diet.demain.calories.Activity.MINIMAL;
-import static org.ivanov.andrey.diet.demain.calories.Sex.FEMALE;
-import static org.ivanov.andrey.diet.demain.calories.Sex.MALE;
+import static org.ivanov.andrey.diet.domain.calories.Activity.EXTREME;
+import static org.ivanov.andrey.diet.domain.calories.Activity.MINIMAL;
+import static org.ivanov.andrey.diet.domain.calories.Sex.FEMALE;
+import static org.ivanov.andrey.diet.domain.calories.Sex.MALE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
